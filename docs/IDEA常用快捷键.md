@@ -4,7 +4,7 @@ idea快捷键：
 3. 选你所想：Ctrl+W
 4. 自我修复：Alt+Enter
 5. 自动完成：Ctrl+Shift+Enter
-6. 可以新建类、方法等任何东西、get/set、toString方法： alt+insert
+6. 可以新建类、方法等任何东西、get/set、toString方法： Alt+Insert
 7. 自动new完整对象： Ctrl+Alt+V，可以引入变量
 8. 自动选中模块代码：Ctrl+W
 9. 移动到前/后方法：Alt+Forward/Backward
@@ -21,3 +21,5 @@ idea快捷键：
 20. 运行程序：Alt+Shift+F10，启动调试：Shift+F9，停止：Ctrl+F2。
 21. 调试：F7/F8/F9分别对应Step into，Step over，Continue
 22. 上/下移一行：Alt+Shift+Up/Down
+23. 直接跳转到方法的实现类：Ctrl+Alt+鼠标左键/B
+24. 从实现类快速跳转到接口：Ctrl+U
