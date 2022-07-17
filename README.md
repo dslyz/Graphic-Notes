@@ -1,4 +1,39 @@
-本项目根据[Guide哥的教程](https://mp.weixin.qq.com/s?__biz=Mzg2OTA0Njk0OA==&mid=2247486555&idx=2&sn=8486026ee9f9ba645ff0363df6036184&chksm=cea24390f9d5ca86ff4177c0aca5e719de17dc89e918212513ee661dd56f17ca8269f4a6e303&token=298703358&lang=zh_CN#rd)搭建而成！感谢Guide出的详细教程。
+- # Java
 
-本项目主要用于搭建个人的知识仓库。
+  -  Java 基础
+  -  Java 集合
+  -  Java 虚拟机
+  -  Java 多线程
+  -  Java IO
 
+- # 数据结构与算法
+
+  - 算法入门
+  - 剑指offer题目整理
+  - CodeTop题目整理
+
+- # 数据库
+
+  - 数据库原理
+  - MYSQL
+  - MySQL面试题整理
+  - Redis
+  - Redis面试题整理
+
+- # 计算机网络
+
+  - 基础知识
+  - 面试题整理
+
+- # 操作系统
+
+  - 基础知识
+  - Linux
+    - 基础入门
+    - 场景题整理
+    - 面试整理
+
+- # 版本控制
+
+  -  SVN基本使用
+  -  Git入门
