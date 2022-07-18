@@ -28,7 +28,7 @@
 
   - MYSQL
 
-  - MySQL面试题整理
+  - [MySQL面试题整理](./docs/数据库/MySQL面试题.md)
 
   - Redis
 
