@@ -1,3 +1,9 @@
+>说明：资料来源于https://mp.weixin.qq.com/s/zSTyZ-8CFalwAYSB0PN6wA
+>
+>收集仅作个人学习使用。
+
+
+
 # 基础
 
 ## 1. 什么是内连接、外连接、交叉连接、笛卡尔积呢？
