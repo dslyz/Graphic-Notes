@@ -300,6 +300,64 @@ public:
 
 [题目链接](https://leetcode.cn/problems/reverse-nodes-in-k-group/)
 
+### 解题思路：
+
+1、反转之前先判断未反转的链表元素是否有k个
+
+2、对接下来k个元素进行反转操作
+
+3、改变反转后的链表头节点和尾节点的指向
+
+4、依次循环执行
+
+### 代码实现：
+
+```c++
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* reverseKGroup(ListNode* head, int k) {
+        auto dummy = new ListNode(-1);
+        dummy->next = head;
+        for(auto p = dummy;;)
+        {
+            auto q = p;
+            //先判断当前节点后面是否有足量的k个元素
+            for(int i = 0; i < k && q; i ++) q = q->next;
+            //如果元素数量不足，直接break
+            if(!q) break;
+            auto a = p->next, b = a->next;
+            //反转链表
+            for(int i = 0; i < k - 1; i ++)
+            {
+                auto c = b->next;
+                b->next = a;
+                a = b;
+                b = c;
+            }
+            //改变节点指向
+            auto c = p->next;
+            p->next = a;
+            c->next = b;
+            //更新p节点
+            p = c;
+
+        }
+
+        return dummy->next;
+    }
+};
+```
+
 
 
 
