@@ -713,6 +713,166 @@ public:
 
 # 11-20
 
+## 11、二叉树的层序遍历
+
+[题目链接](https://leetcode.cn/problems/binary-tree-level-order-traversal/)
+
+### 解题思路：(DFS) O(n）
+
+深度优先遍历
+
+每层之间加一个NULL作为该层的结束点
+
+> 1、添加root进入队列，并添加结束点
+> 2、取出该层所以节点，将其值记录起来，并按顺序将其子节点加入队列中，
+> 3、取到结束点时，将该层的结果 记录到答案中，并添加一个结束点
+> 4、重复 步骤2,3 当队列只剩一个结束点为止
+
+### 代码实现：
+
+```c++
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+
+    void dfs(TreeNode * root, vector<vector<int>>& res){
+        //使用队列存储每一层节点
+        queue<TreeNode*> s;
+        s.push(root);
+        //每一层以null指针作为判断结束条件
+        s.push(nullptr);
+
+        //循环输出每一层节点
+        while(s.front() != nullptr){
+            vector<int> tmp;
+            auto p = s.front();
+            s.pop();
+            //如果取出的节点不为空，即还未到达每一层的最后
+            while(p != nullptr){
+                tmp.push_back(p->val);
+                if(p->left) s.push(p->left);
+                if(p->right) s.push(p->right);
+                //取出下一个节点，直到取得的节点为null为止
+                p = s.front();
+                s.pop();
+            }
+            s.push(nullptr);
+            res.push_back(tmp);
+        }
+    }
+
+    vector<vector<int>> levelOrder(TreeNode* root) {
+        vector<vector<int>> res;
+        dfs(root, res);
+        return res;
+    }
+};
+```
+
+
+
+## 12、买卖股票的最佳时机
+
+[题目链接](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/)
+
+### 解题思路：贪心
+
+贪心：维护i之前最小的买入价格，维护在i处卖出的最大收益
+
+```c++
+class Solution {
+public:
+    int maxProfit(vector<int>& prices) {
+        int n = prices.size();
+        if(n < 2) return 0;
+        int low = prices[0], profit = 0;
+        //对于当前位置i，取其左侧最小的元素
+        for(int i = 1; i < n; i ++){
+            low = min(low, prices[i]);
+            profit = max(profit, prices[i] - low);
+        }
+        return profit;
+    }
+};
+```
+
+
+
+## 13、环形链表
+
+[题目链接](https://leetcode.cn/problems/linked-list-cycle/)
+
+### 解题思路：使用floyd算法-快慢指针判环
+
+代码实现：
+
+```c++
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    bool hasCycle(ListNode *head) {
+        //快慢指针判环
+        auto fast = head, slow = fast;
+        do{
+            if(!fast || !fast->next) return false;
+            fast = fast->next->next;
+            slow = slow->next;
+        }while(fast != slow);
+
+        return true;
+    }
+};
+```
+
+
+
+## 14、搜索旋转排序数组
+
+[题目链接](https://leetcode.cn/problems/search-in-rotated-sorted-array/)
+
+
+
+
+
+## 15、二叉树的锯齿形层次遍历
+
+
+
+## 16、有效的括号
+
+
+
+## 17、合并两个有序数组
+
+
+
+## 18、最长回文子串
+
+
+
+## 19、二叉树的最近公共祖先
+
+
+
+## 20、岛屿数量
+
 
 
 # 21-30
